@@ -31,7 +31,7 @@ export default class Logo extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { logo: '' };
+        this.state = { logo: '' ,size:''};
 
 
     }
@@ -44,9 +44,9 @@ export default class Logo extends React.Component {
 
 
             this.setState({ logo: resp.data })
+            this.setState({size:resp.data.length})
 
-
-            console.log(this.state.logo);
+            console.log(this.state.size);
            
         });
 
@@ -60,20 +60,21 @@ export default class Logo extends React.Component {
         let r=Object.values(this.state.logo);
       
      const c= r.map(element=>
-        <img  style={{ height:"30%", width: "30%" }} src={element.image}></img>
+        <img  style={{ height:"100%", width: (100/this.state.size)+'%', display:'inline' }} src={element.image}></img>
         );
 
 
         return (
 
-           <Box width="50%">
-            <Paper elevation={15} >
-                <Box m={1} >
+           <Box  display='inline' width='100%' height={10}>
+            <Paper style={{opacity:0.9}}elevation={15} >
+                
                 
                 {c}
-                </Box>
+              
             </Paper>
             </Box>
+           
 
         );
     }

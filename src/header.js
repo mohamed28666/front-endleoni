@@ -45,6 +45,13 @@ HideOnScroll.propTypes = {
 };
 
 export default function HideAppBar(props) {
+  const styles = theme => ({
+
+    spacing: 8
+
+
+
+  });
   return (
     <React.Fragment>
       <CssBaseline />
@@ -53,16 +60,34 @@ export default function HideAppBar(props) {
           <Toolbar>
             <Grid container alignItems="stretch" spacing={1} >
               <Grid item xs={4}>
-                <Box display="block" py={2.3}>
-                  <Typography variant="h6">LEONI</Typography>
-                 <Logo></Logo>
+                <Box display="block" mt={3} mb={2}>
+                  <Grid container alignItems="stretch" spacing={1} >
+                    <Grid item xs={2}>
+
+
+                      <Box mt={2}>
+                        <Typography align='center' variant="h5">LEONI </Typography>
+                      </Box>
+
+                    </Grid>
+                    <Grid item xs={7}>
+                      <Box display='inline' >
+                        <Logo></Logo>
+                      </Box>
+                    </Grid>
+
+                  </Grid>
                 </Box>
               </Grid>
               <Grid item xs={4}>
-              <Time></Time>
+                <Box mt={3}>
+                  <Time></Time>
+                </Box>
               </Grid>
               <Grid item xs={4}>
-                <Dht></Dht>
+                <Box mt={5}>
+                  <Typography align='center' variant="h5">MEB-TN IT DEPARTEMENT</Typography>
+                </Box>
               </Grid>
             </Grid>
 
@@ -72,7 +97,7 @@ export default function HideAppBar(props) {
       </HideOnScroll>
       <Toolbar />
       <Container>
-        <Box my={2}>
+        <Box >
 
         </Box>
       </Container>

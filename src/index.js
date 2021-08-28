@@ -26,7 +26,7 @@ ReactDOM.render(
     <BrowserRouter >
       <React.StrictMode>
 
-        <Route exact path="/"><Formtest></Formtest></Route>
+        <Route exact path="/"></Route>
         <Route exact path="/entered">
 
 

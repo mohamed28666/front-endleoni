@@ -46,10 +46,10 @@ export default class Time extends React.Component {
         return (
 
             
-                    <Paper elevation={15} >
+                    <Paper elevation={15} style={{opacity:0.9 }}>
                         <Box m={1} >
-                            <Typography align="center" display="block" variant="p"> {this.state.time} </Typography>
-                            <Typography align="center" display="block" variant="p"> {this.state.date} </Typography>
+                            <Typography align="center" variant="h5"display="block" > {this.state.time} </Typography>
+                            <Typography align="center" display="block" variant="h5"> {this.state.date} </Typography>
                            
                         </Box>
                     </Paper>

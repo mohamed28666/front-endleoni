@@ -37,7 +37,8 @@ ReactDOM.render(
         </Route>
         <Route exact path="/stream"><Ws_camera></Ws_camera></Route>
       </React.StrictMode>
-    </BrowserRouter></>,
+    </BrowserRouter>
+    </>,
   document.getElementById('root')
 );
 

@@ -11,8 +11,8 @@ import Slide from '@material-ui/core/Slide';
 
 import Dht from './dht.js'
 import Grid from '@material-ui/core/Grid'
-
-
+import Time from './time.js';
+import Logo from './logo.js';
 const styles = theme => ({
 
   spacing: 8
@@ -52,12 +52,16 @@ export default function HideAppBar(props) {
         <AppBar>
           <Toolbar>
             <Grid container alignItems="stretch" spacing={1} >
-              <Grid item xs={9}>
-                <Box py={2.3}>
-                <Typography variant="h6">Hamouda's Room</Typography>
+              <Grid item xs={4}>
+                <Box display="block" py={2.3}>
+                  <Typography variant="h6">LEONI</Typography>
+                 <Logo></Logo>
                 </Box>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={4}>
+              <Time></Time>
+              </Grid>
+              <Grid item xs={4}>
                 <Dht></Dht>
               </Grid>
             </Grid>

@@ -8,7 +8,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
-
+import { sizing } from '@material-ui/system';
 import Dht from './dht.js'
 import Grid from '@material-ui/core/Grid'
 import Time from './time.js';
@@ -20,6 +20,23 @@ const styles = theme => ({
 
 
 });
+const mystyle = {
+  bg_paper: {
+      backgroundColor: "#F5F159",
+      height: "100%",
+      marginTop:100
+  },
+  bg_paper_L: {
+      backgroundColor: "#023AA2",
+      height: "100%",
+      PaddinBottom: 10
+  }
+ 
+
+
+
+}
+
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -54,13 +71,16 @@ export default function HideAppBar(props) {
   });
   return (
     <React.Fragment>
+        <Box height={130}>
       <CssBaseline />
+    
       <HideOnScroll {...props}>
+       
         <AppBar>
           <Toolbar>
             <Grid container alignItems="stretch" spacing={1} >
               <Grid item xs={4}>
-                <Box display="block" mt={3} mb={2}>
+                <Box  mt={3} mb={2}>
                   <Grid container alignItems="stretch" spacing={1} >
                     <Grid item xs={2}>
 
@@ -71,16 +91,16 @@ export default function HideAppBar(props) {
 
                     </Grid>
                     <Grid item xs={7}>
-                      <Box display='inline' >
+                      
                         <Logo></Logo>
-                      </Box>
+                      
                     </Grid>
 
                   </Grid>
                 </Box>
               </Grid>
               <Grid item xs={4}>
-                <Box mt={3}>
+                <Box height={100} mt={3}>
                   <Time></Time>
                 </Box>
               </Grid>
@@ -94,8 +114,11 @@ export default function HideAppBar(props) {
 
           </Toolbar>
         </AppBar>
+      
       </HideOnScroll>
+   
       <Toolbar />
+      </Box>
       <Container>
         <Box >
 

@@ -10,7 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import { array } from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Container from '@material-ui/core/Container';
+let g = ""
 const styles = theme => ({
 
     spacing: 8
@@ -25,13 +26,18 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(1),
         },
     },
+    large: {
+        width: theme.spacing(7),
+        height: theme.spacing(7),
+    },
 }));
+
 
 export default class Logo extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { logo: '' ,size:''};
+        this.state = { logo: '', size: '' };
 
 
     }
@@ -44,10 +50,10 @@ export default class Logo extends React.Component {
 
 
             this.setState({ logo: resp.data })
-            this.setState({size:resp.data.length})
+            this.setState({ size: resp.data.length })
 
             console.log(this.state.size);
-           
+
         });
 
 
@@ -57,24 +63,28 @@ export default class Logo extends React.Component {
 
     }
     render() {
-        let r=Object.values(this.state.logo);
-      
-     const c= r.map(element=>
-        <img  style={{ height:"100%", width: (100/this.state.size)+'%', display:'inline' }} src={element.image}></img>
+        let r = Object.values(this.state.logo);
+
+        const c = r.map(element =>
+            <Avatar style={{ height: (100 / this.state.size) + '%', width: (100 / this.state.size) + '%', display: 'inline-block' }} src={element.image} className={useStyles.large}></Avatar>
         );
 
 
         return (
 
-           <Box  display='inline' width='100%' height={10}>
-            <Paper style={{opacity:0.9}}elevation={15} >
-                
-                
-                {c}
-              
-            </Paper>
+            <Box position='center' display='inline' width={"100%"} height={"100%"} >
+                <Container>
+                    <Paper style={{ opacity: 0.9, height: 15* this.state.size }} elevation={15} >
+                        <Box p={0.5} my={1}>
+
+                            {c}
+                        </Box>
+
+
+                    </Paper>
+                </Container>
             </Box>
-           
+
 
         );
     }

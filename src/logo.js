@@ -52,7 +52,7 @@ export default class Logo extends React.Component {
             this.setState({ logo: resp.data })
             this.setState({ size: resp.data.length })
 
-            console.log(this.state.size);
+           
 
         });
 

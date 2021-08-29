@@ -10,7 +10,7 @@ import Formtest from './formTest';
 import Ws_camera from './WS_camera';
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
-import Line from './line';
+import Line_main_query from './line_query';
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,7 +27,7 @@ ReactDOM.render(
     <BrowserRouter >
       <React.StrictMode>
 
-        <Route exact path="/"><Line></Line></Route>
+        <Route exact path="/"><Line_main_query></Line_main_query></Route>
         <Route exact path="/entered">
 
 

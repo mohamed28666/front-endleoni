@@ -9,6 +9,10 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { Avatar, Container } from '@material-ui/core';
 import active from './active.png'
+import stopped from './stopped.png'
+import holded from './holded.png'
+import Draggable from 'react-draggable'; // The default
+import { DraggableCore } from 'react-draggable'; // <DraggableCore>
 
 
 const styles = theme => ({
@@ -24,8 +28,14 @@ const mystyle = {
         width: "100%",
         height: "100%",
         position: "relative"
+    },
+    description: {
+        position: "absolute",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
     }
-
 
 
 }
@@ -52,21 +62,20 @@ export default class Line extends React.Component {
 
             <Container>
 
-                <Box  width="10">
-              
-                    <Paper style={{ width: "300px", height: "105px" , }} elevation={10} >
-                       
-                        
-                                <img style={mystyle.imagestyle } src={active} />
-                                <Box mt={105/16} mx={"50%"}>
-                                <Typography style={{position:"inherit"}}>AUDI</Typography>
-                                </Box>
-                         
-                      
+                <Box width="10">
+                    <Draggable >
 
 
-                    </Paper>
-               
+                        <Paper style={{ width: "300px", height: "105px", }} elevation={10} >
+                            <img style={mystyle.imagestyle} src={active} />
+                            <Box style={mystyle.description}>
+                                <Typography >line number :{this.props.line_number}</Typography>
+                                <Typography >RT_RATIO :{this.props.RT_RATIO}</Typography>
+                                <Typography >A_DURATION :{this.props.A_DURATION}</Typography>
+                                <Typography >D_DURATION :{this.props.D_DURATION}</Typography>
+                            </Box>
+                        </Paper>
+                    </Draggable>
                 </Box>
             </Container >
         );

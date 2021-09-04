@@ -13,7 +13,7 @@ import stopped from './stopped.png'
 import holded from './holded.png'
 import Draggable from 'react-draggable'; // The default
 import { DraggableCore } from 'react-draggable'; // <DraggableCore>
-
+import CustomizedTables from './table';
 
 const styles = theme => ({
 
@@ -44,13 +44,21 @@ export default class Line extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = { image: '' };
 
 
     }
     async componentDidMount() {
 
-
+        if (this.props.state == 1) {
+            this.setState({ image: active });
+        }
+        if (this.props.state == 0) {
+            this.setState({ image: stopped });
+        }
+        if (this.props.state == 2) {
+            this.setState({ image: holded });
+        }
 
 
     }
@@ -58,6 +66,8 @@ export default class Line extends React.Component {
 
     }
     render() {
+
+
         return (
 
             <Container>
@@ -66,13 +76,19 @@ export default class Line extends React.Component {
                     <Draggable >
 
 
-                        <Paper style={{ width: "300px", height: "105px", }} elevation={10} >
-                            <img style={mystyle.imagestyle} src={active} />
+                        <Paper style={{ width: "300px", height: "105px", }} elevation={24} >
+                            <img style={mystyle.imagestyle} src={this.state.image} />
                             <Box style={mystyle.description}>
                                 <Typography >line number :{this.props.line_number}</Typography>
-                                <Typography >RT_RATIO :{this.props.RT_RATIO}</Typography>
-                                <Typography >A_DURATION :{this.props.A_DURATION}</Typography>
-                                <Typography >D_DURATION :{this.props.D_DURATION}</Typography>
+
+
+                            </Box>
+                            <Box my={1}>
+                                <Paper elevation={2}>
+                                    <Box p={1}>
+                                        <CustomizedTables line_number={this.props.line_number} RT_RATIO={this.props.RT_RATIO} A_DURATION={this.props.A_DURATION} D_DURATION={this.props.D_DURATION} START_TIME={this.props.START_TIME}></CustomizedTables>
+                                    </Box>
+                                </Paper>
                             </Box>
                         </Paper>
                     </Draggable>

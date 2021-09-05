@@ -10,7 +10,8 @@ import Formtest from './formTest';
 import Ws_camera from './WS_camera';
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
-import Line_main_query from './vow';
+import MH1 from './MH1';
+
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {
@@ -21,6 +22,7 @@ import {
   BrowserRouter
 } from "react-router-dom";
 import { Container, Typography } from '@material-ui/core';
+import MH2 from './MH2';
 
 ReactDOM.render(
   <>
@@ -30,20 +32,20 @@ ReactDOM.render(
       <React.StrictMode>
 
         <Route exact path="/">
-        <Line_main_query></Line_main_query>
+       <MH1></MH1>
         
-     
+        <MH2></MH2>
+        </Route>
+        <Route exact path="/MH1">
 
-          
 
+         <MH1></MH1>
 
         </Route>
-        <Route exact path="/entered">
+        <Route exact path="/MH2">
 
 
-          <Box >
-            <DashBoard></DashBoard>
-          </Box>
+         <MH2></MH2>
 
         </Route>
         <Route exact path="/stream"><Ws_camera></Ws_camera></Route>

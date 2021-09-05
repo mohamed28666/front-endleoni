@@ -14,7 +14,7 @@ const StyledTableCell = withStyles((theme) => ({
     color: theme.palette.common.white,
   },
   body: {
-    fontSize: 14,
+    fontSize: 13,
   },
 }))(TableCell);
 
@@ -34,7 +34,7 @@ function createData(name, calories, fat, carbs, protein) {
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 100,
+    minWidth: 90,
   },
 });
 

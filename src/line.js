@@ -32,7 +32,7 @@ const mystyle = {
     description: {
         position: "absolute",
         position: "absolute",
-        top: "50%",
+        top: "10%",
         left: "50%",
         transform: "translate(-50%, -50%)"
     }
@@ -44,7 +44,7 @@ export default class Line extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { image: '' };
+        this.state = { image: '', defaultPosition: {} };
 
 
     }
@@ -69,31 +69,34 @@ export default class Line extends React.Component {
 
 
         return (
-
-            <Container>
-
-                <Box width="10">
-                    <Draggable >
-
-
-                        <Paper style={{ width: "300px", height: "105px", }} elevation={24} >
-                            <img style={mystyle.imagestyle} src={this.state.image} />
-                            <Box style={mystyle.description}>
-                                <Typography >line number :{this.props.line_number}</Typography>
-
-
-                            </Box>
-                            <Box my={1}>
-                                <Paper elevation={2}>
-                                    <Box p={1}>
-                                        <CustomizedTables line_number={this.props.line_number} RT_RATIO={this.props.RT_RATIO} A_DURATION={this.props.A_DURATION} D_DURATION={this.props.D_DURATION} START_TIME={this.props.START_TIME}></CustomizedTables>
-                                    </Box>
-                                </Paper>
+            <Draggable  grid={[40, 40]}>
+                <Container>
+                   
+                    <Paper style={{ width: "300px", height: "fit-content" }} elevation={24} >
+                        <Box mx={1} py={0.4}>
+                        <Paper>
+                            <Box px={0.5}py={0.4}>
+                                <img style={mystyle.imagestyle} src={this.state.image} />
                             </Box>
                         </Paper>
-                    </Draggable>
-                </Box>
-            </Container >
+                        <Box  style={mystyle.description}>
+                            <Typography >Line Number :{this.props.line_number}</Typography>
+
+
+                        </Box>
+                        <Box my={1}>
+                            <Paper elevation={2} style={{ backgroundColor: "#F2F2F2" }}>
+                                <Box p={0.1}>
+                                    <CustomizedTables line_number={this.props.line_number} RT_RATIO={this.props.RT_RATIO} A_DURATION={this.props.A_DURATION} D_DURATION={this.props.D_DURATION} START_TIME={this.props.START_TIME}></CustomizedTables>
+                                </Box>
+                            </Paper>
+                        </Box>
+                        </Box>
+                    </Paper>
+
+
+                </Container >
+            </Draggable>
         );
     }
 

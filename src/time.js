@@ -33,8 +33,8 @@ export default class Time extends React.Component {
 
         this.interval=setInterval( () => {
            today = new Date();
-                this.setState({ time: today.getHours() +':' + addZero(today.getMinutes()) +':'+ addZero(today.getSeconds()),date:
-                today.getDate() +'-'+(today.getMonth()+1)+'-'+ today.getFullYear() });
+                this.setState({ time: addZero(today.getHours()) +':' + addZero(today.getMinutes()) +':'+ addZero(today.getSeconds()),date:
+                addZero(today.getDate()) +'-'+addZero(today.getMonth()+1)+'-'+ addZero(today.getFullYear()) });
         },1000);
         
 
@@ -46,7 +46,7 @@ export default class Time extends React.Component {
         return (
 
             
-                    <Paper elevation={15} style={{opacity:0.9 }}>
+                    <Paper elevation={15} style={{opacity:0.9 ,height:'fit-content'}}>
                         <Box m={1} >
                             <Typography align="center" variant="h5"display="block" > {this.state.time} </Typography>
                             <Typography align="center" display="block" variant="h5"> {this.state.date} </Typography>

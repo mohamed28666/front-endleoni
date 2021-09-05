@@ -74,7 +74,7 @@ export default class Logo extends React.Component {
 
             <Box position='center' display='inline' width={"100%"} height={"100%"} >
                 <Container>
-                    <Paper style={{ opacity: 0.9, height: 15* this.state.size }} elevation={15} >
+                    <Paper style={{ opacity: 0.9, width:'fit-content',height: 'fit-content'}} elevation={15} >
                         <Box p={0.5} my={1}>
 
                             {c}

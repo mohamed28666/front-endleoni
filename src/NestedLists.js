@@ -17,7 +17,7 @@ import ContactsIcon from '@material-ui/icons/Contacts';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import { PinDropSharp } from '@material-ui/icons';
 import Checkbox from '@material-ui/core/Checkbox';
-
+import axios from 'axios';
 const useStyles = makeStyles(theme => ({
   
 }));
@@ -34,10 +34,10 @@ export default function NestedLists() {
       Icon: InboxIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi , checked : true},
-        { name: 'Seat', image: seat ,checked:true },
-        { name: 'Neo',  image: volks ,checked:true },
-        { name: 'Assuve', image: volks ,checked : true}
+        { name: 'Audi', image: audi , checked : ''},
+        { name: 'Seat', image: seat ,checked:'' },
+        { name: 'Neo',  image: volks ,checked:'' },
+        { name: 'Assuve', image: volks ,checked : ''}
       ]
     },
     {
@@ -84,11 +84,25 @@ export default function NestedLists() {
   
     setItems(newItems);
   };
-  const render_component =(state ,index) => () => {
+  const render_component =(state,line_name ,index) => () => {
    state=!state;
+
+    if(state==false){
+      state=0
+    }else state =1
+
+    axios.get('http://localhost:3333/mh1/line_number/'+state+'/RT_RATIO/START_TIM/'+line_name).then(resp => {
+
+
+        });
+        axios.get('http://localhost:3333/mh2/line_number/'+state+'/RT_RATIO/START_TIM/'+line_name).then(resp => {
+
+
+        });
    
-   console.log(items)
+   console.log(line_name)
    console.log(index)
+   console.log(state)
   
   };
 
@@ -115,8 +129,8 @@ export default function NestedLists() {
               >
                 <ListItemIcon>
                 <Avatar src={child.image}></Avatar>
-                <Checkbox checked={child.checked}
-                onChange={render_component(child.checked,index)}></Checkbox>
+                <Checkbox 
+                onChange={render_component(child.checked,child.name,index)}></Checkbox>
                 </ListItemIcon>
                 <ListItemText primary={child.name} />
               </ListItem>

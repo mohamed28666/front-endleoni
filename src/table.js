@@ -41,6 +41,7 @@ const useStyles = makeStyles({
 export default function CustomizedTables(props) {
   const classes = useStyles();
   const rows = [
+    createData('V-type',props.V_type),
     createData('Line Number',props.line_number ),
     createData('A_DURATION', props.A_DURATION),
     createData('D_DURATION', props.D_DURATION ),

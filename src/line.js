@@ -87,7 +87,7 @@ export default class Line extends React.Component {
                         <Box my={1}>
                             <Paper elevation={2} style={{ backgroundColor: "#F2F2F2" }}>
                                 <Box p={0.1}>
-                                    <CustomizedTables line_number={this.props.line_number} RT_RATIO={this.props.RT_RATIO} A_DURATION={this.props.A_DURATION} D_DURATION={this.props.D_DURATION} START_TIME={this.props.START_TIME}></CustomizedTables>
+                                    <CustomizedTables V_type ={this.props.V_type} line_number={this.props.line_number} RT_RATIO={this.props.RT_RATIO} A_DURATION={this.props.A_DURATION} D_DURATION={this.props.D_DURATION} START_TIME={this.props.START_TIME}></CustomizedTables>
                                 </Box>
                             </Paper>
                         </Box>

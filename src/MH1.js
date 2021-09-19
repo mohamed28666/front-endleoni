@@ -69,7 +69,8 @@ export default class MH1 extends React.Component {
                     RT_RATIO={element.RT_RATIO}
                     DISPLAY_LINE={true}
                     state={element.STATE}
-                    line_number={element.LINE_NUMBER}></Line ></Box>
+                    line_number={element.LINE_NUMBER}
+                    V_type={element.V_type}></Line ></Box>
         );
         return (
 

@@ -11,7 +11,7 @@ import Ws_camera from './WS_camera';
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import MH1 from './MH1';
-
+import AppBarInteraction from './AppBarInteraction'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {
@@ -26,8 +26,9 @@ import MH2 from './MH2';
 
 ReactDOM.render(
   <>
-    <HideAppBar></HideAppBar>
-
+    
+    <AppBarInteraction></AppBarInteraction>
+  
     <BrowserRouter >
       <React.StrictMode>
 

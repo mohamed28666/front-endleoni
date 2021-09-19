@@ -27,16 +27,17 @@ const ExpandIcon = ({ expanded }) =>
 
 export default function NestedLists() {
   const classes = useStyles();
+
   const [items, setItems] = useState([
     {
       name: 'VorderWagen',
       Icon: InboxIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi },
-        { name: 'Seat', image: seat  },
-        { name: 'Neo',  image: volks  },
-        { name: 'Assuve', image: volks }
+        { name: 'Audi', image: audi , checked : true},
+        { name: 'Seat', image: seat ,checked:true },
+        { name: 'Neo',  image: volks ,checked:true },
+        { name: 'Assuve', image: volks ,checked : true}
       ]
     },
     {
@@ -44,10 +45,10 @@ export default function NestedLists() {
       Icon: ContactsIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi },
-        { name: 'Seat', image: seat  },
-        { name: 'Neo',  image: volks  },
-        { name: 'Assuve', image: volks }
+        { name: 'Audi', image: audi ,checked:true},
+        { name: 'Seat', image: seat ,checked : true  },
+        { name: 'Neo',  image: volks  ,checked : true},
+        { name: 'Assuve', image: volks,checked :true }
       ]
     },
     {
@@ -55,10 +56,10 @@ export default function NestedLists() {
       Icon: ContactsIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi },
-        { name: 'Seat', image: seat  },
-        { name: 'Neo',  image: volks  },
-        { name: 'Assuve', image: volks }
+        { name: 'Audi', image: audi ,checked:true},
+        { name: 'Seat', image: seat ,checked:true },
+        { name: 'Neo',  image: volks ,checked:true },
+        { name: 'Assuve', image: volks,checked:true }
       ]
     },
     {
@@ -66,21 +67,29 @@ export default function NestedLists() {
       Icon: ContactsIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi },
-        { name: 'Seat', image: seat  },
-        { name: 'Neo',  image: volks  },
-        { name: 'Assuve', image: volks }
+        { name: 'Audi', image: audi,checked:false },
+        { name: 'Seat', image: seat ,checked:true },
+        { name: 'Neo',  image: volks ,checked:true },
+        { name: 'Assuve', image: volks ,checked:true }
       ]
     }
   ]);
 
   const onClick = index => () => {
+
     const newItems = [...items];
     const item = items[index];
 
     newItems[index] = { ...item, expanded: !item.expanded };
-
+  
     setItems(newItems);
+  };
+  const render_component =(state ,index) => () => {
+   state=!state;
+   
+   console.log(items)
+   console.log(index)
+  
   };
 
   return (
@@ -90,13 +99,14 @@ export default function NestedLists() {
           <ListItem button onClick={onClick(index)}>
             <ListItemIcon>
               <Icon />
-              
-            </ListItemIcon>
+              </ListItemIcon>
             <ListItemText primary={item.name} />
             <ExpandIcon expanded={item.expanded} />
           </ListItem>
           <Collapse in={item.expanded}>
-            {item.children.map(child => (
+            {
+           
+            item.children.map((child,index) => (
               <ListItem
                 key={child.name}
                 className={classes.subItem}
@@ -105,7 +115,8 @@ export default function NestedLists() {
               >
                 <ListItemIcon>
                 <Avatar src={child.image}></Avatar>
-                <Checkbox></Checkbox>
+                <Checkbox checked={child.checked}
+                onChange={render_component(child.checked,index)}></Checkbox>
                 </ListItemIcon>
                 <ListItemText primary={child.name} />
               </ListItem>

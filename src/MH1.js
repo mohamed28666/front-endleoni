@@ -70,7 +70,7 @@ export default class MH1 extends React.Component {
                     DISPLAY_LINE={true}
                     state={element.STATE}
                     line_number={element.LINE_NUMBER}
-                    V_type={element.V_type}></Line ></Box>
+                    V_type={element.V_Type}></Line ></Box>
         );
         return (
 

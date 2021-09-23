@@ -19,7 +19,7 @@ import { PinDropSharp } from '@material-ui/icons';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
 const useStyles = makeStyles(theme => ({
-  
+
 }));
 
 const ExpandIcon = ({ expanded }) =>
@@ -34,10 +34,10 @@ export default function NestedLists() {
       Icon: InboxIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi , checked : ''},
-        { name: 'Seat', image: seat ,checked:'' },
-        { name: 'Neo',  image: volks ,checked:'' },
-        { name: 'Assuve', image: volks ,checked : ''}
+        { name: 'Audi', image: audi, checked:null  },
+        { name: 'Seat', image: seat, checked: null},
+        { name: 'Neo', image: volks, checked: false },
+        { name: 'Assuve', image: volks, checked:false }
       ]
     },
     {
@@ -45,10 +45,10 @@ export default function NestedLists() {
       Icon: ContactsIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi ,checked:true},
-        { name: 'Seat', image: seat ,checked : true  },
-        { name: 'Neo',  image: volks  ,checked : true},
-        { name: 'Assuve', image: volks,checked :true }
+        { name: 'Audi', image: audi, checked: true },
+        { name: 'Seat', image: seat, checked: true },
+        { name: 'Neo', image: volks, checked: true },
+        { name: 'Assuve', image: volks, checked: true }
       ]
     },
     {
@@ -56,10 +56,10 @@ export default function NestedLists() {
       Icon: ContactsIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi ,checked:true},
-        { name: 'Seat', image: seat ,checked:true },
-        { name: 'Neo',  image: volks ,checked:true },
-        { name: 'Assuve', image: volks,checked:true }
+        { name: 'Audi', image: audi, checked: true },
+        { name: 'Seat', image: seat, checked: true },
+        { name: 'Neo', image: volks, checked: true },
+        { name: 'Assuve', image: volks, checked: true }
       ]
     },
     {
@@ -67,13 +67,14 @@ export default function NestedLists() {
       Icon: ContactsIcon,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi,checked:false },
-        { name: 'Seat', image: seat ,checked:true },
-        { name: 'Neo',  image: volks ,checked:true },
-        { name: 'Assuve', image: volks ,checked:true }
+        { name: 'Audi', image: audi, checked: false },
+        { name: 'Seat', image: seat, checked: true },
+        { name: 'Neo', image: volks, checked: true },
+        { name: 'Assuve', image: volks, checked: true }
       ]
     }
   ]);
+
 
   const onClick = index => () => {
 
@@ -81,30 +82,32 @@ export default function NestedLists() {
     const item = items[index];
 
     newItems[index] = { ...item, expanded: !item.expanded };
-  
+
     setItems(newItems);
   };
-  const render_component =(state,line_name ,index) => () => {
-   state=!state;
+  const render_component = (state, line_name, index,segment) => () => {
+    state =! state;
 
-    if(state==false){
-      state=0
-    }else state =1
+    if (state == false) {
+      state = 0
+    } else state = 1
 
-    axios.get('http://localhost:3333/mh1/line_number/'+state+'/RT_RATIO/START_TIM/'+line_name).then(resp => {
-
-
-        });
-        axios.get('http://localhost:3333/mh2/line_number/'+state+'/RT_RATIO/START_TIM/'+line_name).then(resp => {
+    axios.get('http://localhost:3333/mh1/line_number/' + state + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
+    axios.get('http://localhost:3333/mh2/line_number/' + state + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
+    
 
 
-        });
-   
-   console.log(line_name)
-   console.log(index)
-   console.log(state)
-  
+    console.log(line_name)
+    console.log(segment)
+    console.log(state)
+    console.log(index)
+    
+    
+      
+      
+
   };
+  
 
   return (
     <List>
@@ -113,28 +116,30 @@ export default function NestedLists() {
           <ListItem button onClick={onClick(index)}>
             <ListItemIcon>
               <Icon />
-              </ListItemIcon>
+            </ListItemIcon>
             <ListItemText primary={item.name} />
             <ExpandIcon expanded={item.expanded} />
           </ListItem>
           <Collapse in={item.expanded}>
             {
-           
-            item.children.map((child,index) => (
-              <ListItem
-                key={child.name}
-                className={classes.subItem}
-                button
-                dense
-              >
-                <ListItemIcon>
-                <Avatar src={child.image}></Avatar>
-                <Checkbox 
-                onChange={render_component(child.checked,child.name,index)}></Checkbox>
-                </ListItemIcon>
-                <ListItemText primary={child.name} />
-              </ListItem>
-            ))}
+
+              item.children.map((child, index) => (
+                <ListItem
+                  key={child.name}
+                  className={classes.subItem}
+                  button
+                  dense
+                >
+                  <ListItemIcon>
+                    <Avatar src={child.image}></Avatar>
+                    <Checkbox
+                      defaultChecked={false}
+                     
+                      onChange={render_component(false, child.name, index,item.name)}></Checkbox>
+                  </ListItemIcon>
+                  <ListItemText primary={child.name} />
+                </ListItem>
+              ))}
           </Collapse>
         </Fragment>
       ))}

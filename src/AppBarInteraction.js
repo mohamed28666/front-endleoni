@@ -165,6 +165,9 @@ function AppBarInteraction({ classes, variant }) {
 
   const toggleDrawer = () => {
     setDrawer(!drawer);
+    if (drawer==true){
+      window.location.reload();
+    }
   };
 
   const onItemClick = title => () => {

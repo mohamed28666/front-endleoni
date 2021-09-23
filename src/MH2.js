@@ -77,7 +77,7 @@ export default class MH2 extends React.Component {
 
             <> 
                
-                    <Box mt={5}mb={5}>
+                    <Box mt={7}mb={5}>
 
                         <Paper style={{ width: "fit-content", height: "fit-content", MozPaddingEnd: "10px",marginRight:"auto",marginLeft:"auto"  }}>
                         <Container><Box position="center"><Typography variant='h2'style={{textAlign:"center",color:"#1F52DC",textShadow: "1px 1px 2px #1F52DC, 0 0 1em #1F52DC, 0 0 0.6em #1F52DC"}}> MH2 PLANT</Typography></Box></Container>

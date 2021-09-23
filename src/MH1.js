@@ -77,7 +77,7 @@ export default class MH1 extends React.Component {
 
             <> 
                
-                    <Box my={5}>
+                    <Box my={7}>
 
                         <Paper  style={{ minWidth:"200px", width: "fit-content", height: "fit-content", MozPaddingEnd: "10px",marginRight:"auto",marginLeft:"auto" }}>
                         <Container><Box position="center"><Typography variant='h2'style={{textAlign:"center",color:"#1F52DC",textShadow: "1px 1px 2px #1F52DC, 0 0 1em #1F52DC, 0 0 0.6em #1F52DC"}}> MH1 PLANT</Typography></Box></Container>

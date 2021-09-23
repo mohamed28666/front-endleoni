@@ -18,6 +18,12 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import { PinDropSharp } from '@material-ui/icons';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
+import motor from './motor.jpg'
+import doors from './doors.jpg'
+import innenraum from './innenraum.jpg';
+import chassis from './cha.jpg'
+
+
 const useStyles = makeStyles(theme => ({
 
 }));
@@ -31,7 +37,7 @@ export default function NestedLists() {
   const [items, setItems] = useState([
     {
       name: 'VorderWagen',
-      Icon: InboxIcon,
+      image: motor,
       expanded: false,
       children: [
         { name: 'Audi', image: audi, checked:null  },
@@ -42,7 +48,7 @@ export default function NestedLists() {
     },
     {
       name: 'FahrWerk',
-      Icon: ContactsIcon,
+      image: chassis,
       expanded: false,
       children: [
         { name: 'Audi', image: audi, checked: true },
@@ -53,7 +59,7 @@ export default function NestedLists() {
     },
     {
       name: 'Doors',
-      Icon: ContactsIcon,
+      image: doors,
       expanded: false,
       children: [
         { name: 'Audi', image: audi, checked: true },
@@ -64,10 +70,10 @@ export default function NestedLists() {
     },
     {
       name: 'InnenRaum',
-      Icon: ContactsIcon,
+      image: innenraum,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi, checked: false },
+        { name: 'Audi', image: audi, checked: true },
         { name: 'Seat', image: seat, checked: true },
         { name: 'Neo', image: volks, checked: true },
         { name: 'Assuve', image: volks, checked: true }
@@ -92,8 +98,8 @@ export default function NestedLists() {
       state = 0
     } else state = 1
 
-    axios.get('http://localhost:3333/mh1/line_number/' + state + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
-    axios.get('http://localhost:3333/mh2/line_number/' + state + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
+    axios.get('http://localhost:3333/mh1/line_number/' + state + '/'+segment+'/RT_RATIO/START_TIM/' + line_name).then(resp => { });
+    axios.get('http://localhost:3333/mh2/line_number/' + state + '/'+segment+'/RT_RATIO/START_TIM/' + line_name).then(resp => { });
     
 
 
@@ -107,7 +113,7 @@ export default function NestedLists() {
       
 
   };
-  
+ 
 
   return (
     <List>
@@ -115,7 +121,7 @@ export default function NestedLists() {
         <Fragment key={index}>
           <ListItem button onClick={onClick(index)}>
             <ListItemIcon>
-              <Icon />
+              <Avatar src={item.image}></Avatar>
             </ListItemIcon>
             <ListItemText primary={item.name} />
             <ExpandIcon expanded={item.expanded} />
@@ -131,7 +137,7 @@ export default function NestedLists() {
                   dense
                 >
                   <ListItemIcon>
-                    <Avatar src={child.image}></Avatar>
+                    <Avatar style={{ height: '29px', width: '29px' ,marginLeft : '15px'}} src={child.image}></Avatar>
                     <Checkbox
                       defaultChecked={false}
                      

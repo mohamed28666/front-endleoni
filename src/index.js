@@ -33,7 +33,7 @@ ReactDOM.render(
       <React.StrictMode>
 
         <Route exact path="/">
-       <MH1></MH1>
+        <MH1></MH1>
         
         <MH2></MH2>
         </Route>

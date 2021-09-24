@@ -61,7 +61,7 @@ export default class MH2 extends React.Component {
     render() {
         let array = Object.values(this.state.line);
         const component = array.map(element =>
-            <Box my={2} display='inline-block'>
+            <Box mx={0.3} my={2} display='inline-block'>
                 <Line image={active}
                     START_TIME={element.START_TIME}
                     D_DURATION={element.D_DURATION}

@@ -70,9 +70,9 @@ export default class Line extends React.Component {
 
         return (
             <Draggable  grid={[4, 4]}>
-                <Container>
+                <Container >
                    
-                    <Paper style={{ width: "300px", height: "fit-content" }} elevation={24} >
+                    <Paper style={{  height: "fit-content" }} elevation={24} >
                         <Box mx={1} py={0.4}>
                         <Paper>
                             <Box px={0.5}py={0.4}>

@@ -61,7 +61,7 @@ export default class MH2 extends React.Component {
     render() {
         let array = Object.values(this.state.line);
         const component = array.map(element =>
-            <Box mx={0.3} my={2} display='inline-block'>
+            <Box style={{ width:'25%' }} mx={0} my={2} display='inline-block'>
                 <Line image={active}
                     START_TIME={element.START_TIME}
                     D_DURATION={element.D_DURATION}
@@ -79,9 +79,9 @@ export default class MH2 extends React.Component {
                
                     <Box mt={7}mb={5}>
 
-                        <Paper style={{ width: "fit-content", height: "fit-content", MozPaddingEnd: "10px",marginRight:"auto",marginLeft:"auto"  }}>
+                        <Paper style={{ width: "98%", height: "fit-content", MozPaddingEnd: "10px",marginRight:"auto",marginLeft:"auto"  }}>
                         <Container><Box position="center"><Typography variant='h2'style={{textAlign:"center",color:"#1F52DC",textShadow: "1px 1px 2px #1F52DC, 0 0 1em #1F52DC, 0 0 0.6em #1F52DC"}}> MH2 PLANT</Typography></Box></Container>
-                            <Container>
+                            <Container style={{maxWidth:'100%'}}>
                                 <Box my={-1} pb={3} >
                                     {component}
                                 </Box>

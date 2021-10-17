@@ -42,10 +42,10 @@ export default function NestedLists(props) {
       image: motor,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi, checked: false },
-        { name: 'Seat', image: seat, checked: false },
-        { name: 'Neo', image: volks, checked: false},
-        { name: 'Assuve', image: volks, checked: false}
+        { name: 'Audi', image: audi, checked: true },
+        { name: 'Seat', image: seat, checked: true },
+        { name: 'Neo', image: volks, checked: true},
+        { name: 'Assuve', image: volks, checked: true}
       ]
     },
     {
@@ -53,10 +53,10 @@ export default function NestedLists(props) {
       image: chassis,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi, checked: false },
-        { name: 'Seat', image: seat, checked: false },
-        { name: 'Neo', image: volks, checked: false },
-        { name: 'Assuve', image: volks, checked: false }
+        { name: 'Audi', image: audi, checked: true },
+        { name: 'Seat', image: seat, checked: true },
+        { name: 'Neo', image: volks, checked: true },
+        { name: 'Assuve', image: volks, checked: true }
       ]
     },
     {
@@ -64,10 +64,10 @@ export default function NestedLists(props) {
       image: doors,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi, checked: false },
-        { name: 'Seat', image: seat, checked: false },
-        { name: 'Neo', image: volks, checked: false },
-        { name: 'Assuve', image: volks, checked: false }
+        { name: 'Audi', image: audi, checked: true },
+        { name: 'Seat', image: seat, checked: true},
+        { name: 'Neo', image: volks, checked: true },
+        { name: 'Assuve', image: volks, checked: true }
       ]
     },
     {
@@ -75,10 +75,10 @@ export default function NestedLists(props) {
       image: innenraum,
       expanded: false,
       children: [
-        { name: 'Audi', image: audi, checked: false },
-        { name: 'Seat', image: seat, checked: false },
-        { name: 'Neo', image: volks, checked: false },
-        { name: 'Assuve', image: volks, checked: false }
+        { name: 'Audi', image: audi, checked: true },
+        { name: 'Seat', image: seat, checked: true },
+        { name: 'Neo', image: volks, checked: true },
+        { name: 'Assuve', image: volks, checked: true }
       ]
     }
   ]);

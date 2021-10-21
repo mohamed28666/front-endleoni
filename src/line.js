@@ -50,13 +50,13 @@ export default class Line extends React.Component {
     }
     async componentDidMount() {
 
-        if (this.props.state == 1) {
+        if (this.props.state == 2) {
             this.setState({ image: active });
         }
         if (this.props.state == 0) {
             this.setState({ image: stopped });
         }
-        if (this.props.state == 2) {
+        if (this.props.state == 1) {
             this.setState({ image: holded });
         }
 

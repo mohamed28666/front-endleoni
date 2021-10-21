@@ -26,7 +26,7 @@ export default class Time extends React.Component {
     
     constructor(props) {
         super(props);      
-        this.state = { time: today.getHours() +':' + addZero(today.getMinutes()) +':'+ addZero(today.getSeconds()) ,
+        this.state = { time: addZero(today.getHours()) +':' + addZero(today.getMinutes()) +':'+ addZero(today.getSeconds()) ,
                        date : today.getDate() +'-'+today.getMonth()+'-'+ today.getFullYear() };
     }
     componentDidMount() {
@@ -47,9 +47,9 @@ export default class Time extends React.Component {
 
             
                     <Paper elevation={15} style={{opacity:0.9 ,height:'fit-content'}}>
-                        <Box m={1} >
-                            <Typography align="center" variant="h5"display="block" > {this.state.time} </Typography>
-                            <Typography align="center" display="block" variant="h5"> {this.state.date} </Typography>
+                        <Box   height={"fit-content"} >
+                            <Typography align="center" variant="h7"display="block" > {this.state.time} </Typography>
+                            <Typography align="center" display="block" variant="h7"> {this.state.date} </Typography>
                            
                         </Box>
                     </Paper>

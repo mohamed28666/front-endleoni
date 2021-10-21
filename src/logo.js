@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     large: {
-        width: theme.spacing(7),
-        height: theme.spacing(7),
+        width: theme.spacing(10),
+        height: theme.spacing(10),
     },
 }));
 
@@ -52,7 +52,7 @@ export default class Logo extends React.Component {
             this.setState({ logo: resp.data })
             this.setState({ size: resp.data.length })
 
-           
+
 
         });
 
@@ -66,24 +66,25 @@ export default class Logo extends React.Component {
         let r = Object.values(this.state.logo);
 
         const c = r.map(element =>
-            <Avatar style={{ height: (100 / this.state.size) + '%', width: (100 / this.state.size) + '%', display: 'inline-block' }} src={element.image} className={useStyles.large}></Avatar>
+            <Avatar  style={{  display: 'inline-block' ,marginTop:'5px'}} src={element.image} className={useStyles.large}></Avatar>
         );
 
 
         return (
 
-            <Box position='center' display='inline' width={"100%"} height={"100%"} >
-                <Container>
-                    <Paper style={{ opacity: 0.9, width:'fit-content',height: 'fit-content'}} elevation={15} >
-                        <Box p={0.5} my={1}>
+
+     
+                <Paper style={{ opacity: 0.9, width: 'fit-content', height: '50px' }} elevation={15} >
+                    
+                        <Box width={"100%"} height={"100%"}>
 
                             {c}
                         </Box>
+                 
 
+                </Paper>
+      
 
-                    </Paper>
-                </Container>
-            </Box>
 
 
         );

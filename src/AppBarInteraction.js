@@ -67,21 +67,7 @@ const MyToolbar = withStyles(styles)(
     <Fragment>
       <AppBar className={classes.aboveDrawer}>
         <Toolbar>
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-            onClick={onMenuClick}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            color="inherit"
-            className={classes.flex}
-          >
-            {title}
-          </Typography>
+
 
 
 
@@ -89,16 +75,40 @@ const MyToolbar = withStyles(styles)(
           <Grid container alignItems="stretch" spacing={1} >
             <Grid item xs={4}>
               <Box mt={3} mb={2}>
-                <Grid container alignItems="stretch" spacing={1} >
+                <Grid container alignItems="stretch" spacing={0} >
+                  <Grid item xs={1}>
+
+
+
+                    <IconButton
+                      className={classes.menuButton}
+                      color="inherit"
+                      aria-label="Menu"
+                      onClick={onMenuClick}
+                    >
+                      <MenuIcon />
+                    </IconButton>
+                    <Typography
+                      variant="h6"
+                      color="inherit"
+                      className={classes.flex}
+                    >
+                      {title}
+                    </Typography>
+                  </Grid>
+
+                  <Grid item xs={1} >
+                    <Box mt={1}>
+                      <Typography align='center' variant="h5">LEONI </Typography>
+                    </Box>
+                  </Grid>
+
                   <Grid item xs={2}>
 
 
-                    <Box mt={2}>
-                      <Typography align='center' variant="h5">LEONI </Typography>
-                    </Box>
 
                   </Grid>
-                  <Grid item xs={7}>
+                  <Grid item xs={5}>
 
                     <Logo></Logo>
 
@@ -107,14 +117,17 @@ const MyToolbar = withStyles(styles)(
                 </Grid>
               </Box>
             </Grid>
-            <Grid item xs={4}>
-              <Box height={100} mt={3}>
-                <Time></Time>
+            <Grid item xs={5}>
+              <Box mt={4} mr={22}>
+
+              <Typography align='center' variant="h5">MEB-TN IT DEPARTEMENT</Typography>
               </Box>
             </Grid>
-            <Grid item xs={4}>
-              <Box mt={5}>
-                <Typography align='center' variant="h5">MEB-TN IT DEPARTEMENT</Typography>
+
+            <Grid item xs={2}>
+              <Box mt={3}>
+         
+                <Time></Time>
               </Box>
             </Grid>
           </Grid>
@@ -153,7 +166,7 @@ const MyDrawer = withStyles(styles)(
         </ListItem>
 
         <NestedLists name={"Vorderwagen"}></NestedLists>
-        
+
       </List>
     </Drawer>
   )
@@ -165,8 +178,8 @@ function AppBarInteraction({ classes, variant }) {
 
   const toggleDrawer = () => {
     setDrawer(!drawer);
-    
-    if (drawer==true){
+
+    if (drawer == true) {
       window.location.reload();
     }
   };

@@ -11,8 +11,16 @@ import active from './active.png'
 import stopped from './stopped.png'
 import holded from './holded.png'
 import Line from './line';
-import { Container } from '@material-ui/core';
+import { ButtonGroup, Container } from '@material-ui/core';
 import background from './background.jpg'
+import { updateLanguageServiceSourceFile } from 'typescript';
+import { BugReportTwoTone, PersonAddDisabled } from '@material-ui/icons';
+
+
+
+
+
+
 const styles = theme => ({
 
     spacing: 8
@@ -32,14 +40,19 @@ const mystyle = {
 
 
 }
+
 export default class MH1 extends React.Component {
+
+  
+
 
     constructor(props) {
         super(props);
-        this.state = { line: "", length: "" ,d:""};
+        this.state = { line: "", length: 1 ,d:""};
 
 
     }
+   
     async componentDidMount() {
         await axios.get('http://localhost:3333/mh1').then(resp => {
 
@@ -58,7 +71,11 @@ export default class MH1 extends React.Component {
     componentWillUnmount() {
       
     }
+    
     render() {
+
+        
+
         let array = Object.values(this.state.line);
         const component = array.map(element =>
             <Box  style={{ width:'25%' }} mx={0} my={2} display='inline-block'>
@@ -70,7 +87,9 @@ export default class MH1 extends React.Component {
                     DISPLAY_LINE={true}
                     state={element.STATE}
                     line_number={element.LINE_NUMBER}
-                    V_type={element.V_Type}></Line ></Box>
+                    V_type={element.V_Type}></Line >
+                    
+                   </Box>
         );
         return (
 
@@ -79,8 +98,8 @@ export default class MH1 extends React.Component {
                <Box my={7} >
                
                     
-
                         <Paper  style={{  width: "98%", height: "fit-content",marginRight:"auto",marginLeft:"auto"}}>
+                            
                         <Container><Box position="center"><Typography variant='h2'style={{textAlign:"center",color:"#1F52DC",textShadow: "1px 1px 2px #1F52DC, 0 0 1em #1F52DC, 0 0 0.6em #1F52DC"}}> MH1 PLANT</Typography></Box></Container>
                             <Container style={{maxWidth:'100%'}}>
                                 

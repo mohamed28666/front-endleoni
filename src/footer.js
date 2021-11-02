@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
       <Paper elevation={24}>
-    <Box style={{ position:"fixed" }}>
+    <Box style={{ position:"fixed" ,zIndex:10}}>
      
 
         <Row>

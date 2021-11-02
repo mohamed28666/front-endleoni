@@ -22,15 +22,16 @@ const styles = theme => ({
 
 
 });
+var Time = 120 //time for refreshing 
 export default class RefreshPage extends React.Component {
     
     constructor(props) {
         super(props);      
-        this.state = { time: ''
+        this.state = { time: Time
                         };
     }
     componentDidMount() {
-        var Time = 120
+      
         this.interval=setInterval( () => {
            
     

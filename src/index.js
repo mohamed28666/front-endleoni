@@ -30,7 +30,7 @@ ReactDOM.render(
     
     <AppBarInteraction></AppBarInteraction>
     
-
+    <Footer></Footer>
   
     <BrowserRouter >
       <React.StrictMode>
@@ -39,7 +39,7 @@ ReactDOM.render(
         <MH1></MH1>
         
         <MH2></MH2>
-       <Footer></Footer>
+      
         
         </Route>
         <Route exact path="/MH1">

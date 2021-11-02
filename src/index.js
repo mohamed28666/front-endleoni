@@ -14,6 +14,7 @@ import MH1 from './MH1';
 import AppBarInteraction from './AppBarInteraction'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,13 +22,15 @@ import {
   Link,
   BrowserRouter
 } from "react-router-dom";
-import { Container, Typography } from '@material-ui/core';
-import MH2 from './MH2';
 
+import MH2 from './MH2';
+import Footer from './footer'
 ReactDOM.render(
   <>
     
     <AppBarInteraction></AppBarInteraction>
+    
+
   
     <BrowserRouter >
       <React.StrictMode>
@@ -36,18 +39,20 @@ ReactDOM.render(
         <MH1></MH1>
         
         <MH2></MH2>
+       <Footer></Footer>
+        
         </Route>
         <Route exact path="/MH1">
 
 
          <MH1></MH1>
-
+        
         </Route>
         <Route exact path="/MH2">
 
 
          <MH2></MH2>
-
+      
         </Route>
         <Route exact path="/stream"><Ws_camera></Ws_camera></Route>
       </React.StrictMode>

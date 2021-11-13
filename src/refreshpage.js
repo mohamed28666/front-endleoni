@@ -27,7 +27,7 @@ export default class RefreshPage extends React.Component {
     
     constructor(props) {
         super(props);      
-        this.state = { time: Time
+        this.state = { time: Time+'S'
                         };
     }
     componentDidMount() {
@@ -62,8 +62,8 @@ export default class RefreshPage extends React.Component {
             
                     <Paper elevation={15} style={{opacity:0.9 ,height:'fit-content'}}>
                         <Box   height={"fit-content"} >
-                            <Typography align="center" variant="h7"display="block" > {this.state.time} </Typography>
-                            <Typography align="center" display="block" variant="h7"> {this.state.date} </Typography>
+                            <Typography align="center" variant="h4"display="block" > {this.state.time} </Typography>
+                            <Typography align="center" display="block" variant="h4"> {this.state.date} </Typography>
                            
                         </Box>
                     </Paper>

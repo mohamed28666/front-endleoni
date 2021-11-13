@@ -41,7 +41,7 @@ export default class MH2 extends React.Component {
 
     }
     async componentDidMount() {
-        await axios.get('http://192.168.1.60:3333/MH2').then(resp => {
+        await axios.get('http://desktop-2klr075:3333/MH2').then(resp => {
 
 
 

@@ -48,8 +48,8 @@ export default class Time extends React.Component {
             
                     <Paper elevation={15} style={{opacity:0.9 ,height:'fit-content'}}>
                         <Box   height={"fit-content"} >
-                            <Typography align="center" variant="h7"display="block" > {this.state.time} </Typography>
-                            <Typography align="center" display="block" variant="h7"> {this.state.date} </Typography>
+                            <Typography align="center" variant="subtitle1"display="block" > {this.state.time} </Typography>
+                            <Typography align="center" display="block" variant="subtitle1"> {this.state.date} </Typography>
                            
                         </Box>
                     </Paper>

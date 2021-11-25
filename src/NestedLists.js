@@ -110,8 +110,8 @@ export default function NestedLists(props) {
       etatb = false
     } else { state = 1; etatb = true; }
 
-    axios.get('http://192.168.1.60:3333/mh1/line_number/' + state + '/' + segment + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
-    axios.get('http://192.168.1.60:3333/mh2/line_number/' + state + '/' + segment + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
+    axios.get('http://192.168.1.128:3333/mh1/line_number/' + state + '/' + segment + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
+    axios.get('http://192.168.1.128:3333/mh2/line_number/' + state + '/' + segment + '/RT_RATIO/START_TIM/' + line_name).then(resp => { });
 
     console.log(index1);
     let v = JSON.parse(localStorage.getItem('checkbox'))

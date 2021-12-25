@@ -54,7 +54,7 @@ export default class MH1 extends React.Component {
     }
    
     async componentDidMount() {
-        await axios.get('http://desktop-2klr075:3333/mh1').then(resp => {
+        await axios.get('http://192.168.1.28:3333/mh1').then(resp => {
 
 
 

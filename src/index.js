@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route exact path="/MH1">
 
 
-         <MH1></MH1>
+         
         
         </Route>
         <Route exact path="/MH2">

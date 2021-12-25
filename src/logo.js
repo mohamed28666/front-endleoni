@@ -46,7 +46,7 @@ export default class Logo extends React.Component {
 
 
 
-        await axios.get('http://desktop-2klr075:3333/apperance').then(resp => {
+        await axios.get('http://Jammeldesktop:3333/apperance').then(resp => {
 
 
             this.setState({ logo: resp.data })
